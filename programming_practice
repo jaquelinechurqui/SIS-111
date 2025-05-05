@@ -1,0 +1,183 @@
+#EXERCISE 1
+#Pedimos  5 numeros al usuario
+n1 = int(input("Ingrse el primer numero:"))
+n2 = int(input("Ingrse el segundo numero:"))
+n3 = int(input("Ingrse el tercer numero:"))
+n4 = int(input("Ingrse el cuartonumero:"))
+n5 = int(input("Ingrse el quinto numero:"))
+
+#Verficamos si esta en orden ascendente
+if n1 < n2 and n2 < n3 and n3 < n4 and n4 < n5:
+    print( "Orden ascendente")
+    
+#Verficamos si esta en orden descendente
+elif n1 > n2 and n2 > n3 and n3 > n4 and n4 > n5:
+    print("Orden descendente")
+    
+#Verficamos si esta en orden aleatorio
+else:
+    print("Orden aleatorio")
+
+
+
+#EXERCISE 2
+#Solicitamos al usuario que ingrese una lista de numeros
+entrada = input("ingresa una lista de numeros separadas por espacio:")
+lista = [int (x) for x in entrada.split()]
+
+buscar = int(input("Que numero deseas buscar?: "))
+
+encontrado = False
+
+for  numero in lista:
+    if numero == buscar:
+        encontrado = True
+        break
+if encontrado:
+    print ("numero encontrado")
+else :
+    print ("numero no encontrado")
+
+    
+
+#EXERCISE 3 
+#Solicitar al usuario varios numeros,  e indicar cual es par e impar
+numero = input("Ingresa varios numeros:")
+par = 0 
+impar = 0 
+for digito in numero:
+    if digito.isdigit():
+        if int(digito) % 2 == 0:
+            par += 1
+        else:
+            impar += 1
+
+# Salida
+print("Dígitos pares:", par)
+print("Dígitos impares:", impar)
+
+
+
+#EXERCISE 4 
+#Solicitar al usuario que ingrese los resultados de sus equipos
+oriente = input ("Igrese 5 resultados del equipo de oriente, separados por espacio:")
+blooming = input ("Igrese 5 resultados del equipo de blooming, separados por espacio:")
+
+Equipo_oriente = [int (x) for  x in oriente.split()]
+Equipo_blooming = [int (x) for  x in blooming.split()]
+
+promedio_oriente = sum(Equipo_oriente)/len(Equipo_oriente)
+promedio_blooming = sum(Equipo_blooming)/len(Equipo_blooming)
+
+if promedio_oriente > promedio_blooming:
+    print("Equipo_oriente tuvo mejor rendimiento")
+elif promedio_oriente < promedio_blooming:
+    print("Equipo_blooming tuvo mejor rendimiento")
+else:
+    print ("Ambos equipos tuvieron el mismo rendimiento")
+
+#EXERCISE 5
+# Pedimos 4 números
+a = int(input("Escribe el primer número: "))
+b = int(input("Escribe el segundo número: "))
+c = int(input("Escribe el tercer número: "))
+d = int(input("Escribe el cuarto número: "))
+
+# Calculamos los productos posibles
+produc1 = a * b
+produc2 = a * c
+produc3 = a * d
+produc4 = b * c
+produc5 = b * d
+produc6 = c * d
+
+# Encontramos el más grande
+mayor = produc1
+if produc2 > mayor:
+    mayor = produc2
+if produc3 > mayor:
+    mayor = produc3
+if produc4 > mayor:
+    mayor = produc4
+if produc5 > mayor:
+    mayor = produc5
+if produc6 > mayor:
+    mayor = produc6
+
+# Mostramos el resultado
+print(" El producto más grande es:", mayor)
+
+
+
+#EXERCISE 6 
+# Pedimos la meta de ahorro
+meta = int(input("¿Cuánto quieres ahorrar? "))
+
+# Empezamos con los valores base
+ahorro = 0
+ahorro_dia = 5
+dias = 0
+
+# Vamos sumando día por día
+while ahorro < meta:
+    ahorro = ahorro + ahorro_dia
+    ahorro_dia = ahorro_dia + 2
+    dias = dias + 1
+
+# Mostramos el resultado
+print(" Llegaste a la meta en", dias, "días")
+
+
+
+#EXERCISE 7
+#Verificar si es un numero palindromo
+numero = input ("ingrese un numero de mas de dos digitos")
+al_reves = numero[::-1]
+
+if numero == al_reves:
+    print("es un numero palindromo")
+else :
+    print("No es un numero palindromo")
+
+
+#EXERCISE 8
+#REALIZAR TODAS LAS COMBINACIONES POSIBLES
+#Pedimos 4 numeros 
+num1 = int(input("Ingresa el primer numero:"))
+num2 = int(input("Ingresa el segundo numero:"))
+num3 = int(input("Ingresa el tercer numero:"))
+num4 = int(input("Ingresa el cuarto numero:"))
+
+print("Combinaaciones posibles:")
+print("(",num1,",",num2,")")
+print("(",num1,",",num3,")")
+print("(",num1,",",num4,")")
+print("(",num2,",",num3,")")
+print("(",num2,",",num4,")")
+print("(",num3,",",num4,")")
+
+#EXERCISE 9
+#VERIFICAR SI EL NUMERO ES PRIMO
+n = int(input("Ingrese un numero:"))
+divisores = 0
+
+for i in range (1, n +1):
+    if n % i == 0:
+        divisores += 1
+
+if divisores ==2:
+    print("Es un numero primo")
+else:
+    print("No es un numero primo")
+    
+
+#EXERCISE 10
+#SUMAR SOLO LOS NUMEROS PARES
+numeros = input("Ingrese numeros con espacio entre ellos:")
+numeros = numeros.split()
+
+suma = 0
+for n in numeros:
+    if int(n) % 2 == 0:
+        suma += int(n)
+print("La suma de los pares es:", suma)
