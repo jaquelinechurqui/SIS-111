@@ -26,8 +26,8 @@ control_temperatura()
 #PROMEDIO DE NOTAS
 def prom_notas():
     promedios = []
-    for i in range (1,7):
-        prom = int(input("Ingrese su promedio{i}"))   
+    for i in range (1,8):
+        prom = int(input(f"Ingrese su promedio{i}:"))   
         promedios.append(prom)
 
     #Calculo promedio general
@@ -37,11 +37,53 @@ def prom_notas():
     #Calculo de proemdio
     estudiantes = 0
     for aprob in promedios:
-        if aprob >= 60
+        if aprob >= 60:
             estudiantes +=1
     print (f"Los estudinates aprobados son {estudiantes}")
 
 
     #PROMEDIO MAS BAJO
     nota_baja = min(promedios)
-    
+    nota_menor = promedios.index(nota_baja) + 1 
+    print(f"El estudiante que obtuvo la menor nota se encuentra en el numero: {nota_menor}")
+
+#Llamar a la funcion
+prom_notas()
+
+#CAJERO AUTOMATICO
+pin_correcto = 1234
+saldo =5000  # saldo disponible
+
+#Inicio del programa
+pin = int(input("Ingrese su pin:"))
+
+if pin == pin_correcto:
+    print("Bienvenido, que desea hacer:")
+    print("1. Ver saldo")
+    print("2. Retirar dinero")
+    print("3. Depositar dinero")
+    print("3. Salir")
+
+    opcion = input("Seleccione una opcion:")
+
+    if opcion == "1":
+        print ( " Su saldo actual es", saldo)
+
+    elif opcion == "2":
+        retiro = int(input("ingrese el monto a retirar:"))
+        if retiro <= saldo:
+            saldo_disponible = saldo - retiro
+            print("Retiro exitoso, su saldo actual es:", saldo_disponible)
+        else:
+            print("saldo insuficiente")
+
+    elif opcion == "3":
+            depositar = int(input("Ingrese su el monto a depositar"))
+            saldo_actual = depositar + saldo
+            print(f"Su saldo actual es{saldo_actual}")
+    elif opcion == "4":
+        print ("Querido cliente gracias por usar el cajero, hasta pronto")
+    else :
+         print("opcion invalida")
+else:
+    print("Pin incorrecto")
