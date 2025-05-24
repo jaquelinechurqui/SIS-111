@@ -168,22 +168,3 @@ if suma_derecha == suma_izquierda:
 else:
     print("No es un numero magico")
 
-#Suma Alternada de Dıgitos
-numero = input("Ingrese un numero")
-
-suma = 0
-expresion = ""
-
-for i in range(len(numero)):
-    digito = int(i)
-    if i == 0:
-        suma +=digito
-        expresion += str(digito)
-    if i % 2 == 0:
-        suma -= digito
-        expresion += "-"+ str(digito)
-    else:
-        suma += digito
-        expresion += "+"+ str(digito)
-
-print(expresion + "=" + str(suma))
